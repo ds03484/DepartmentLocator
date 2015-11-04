@@ -50,6 +50,7 @@ $table .= "<table class='table'>
 while (($row = oci_fetch($stid))){
     $table .= "<tr>";
     $table .=  "<td>$str_add</td>";
+    $table .=  "<td>$pos_cd</td>";
     $table .=  "<td>$city</td>";
     $table .=  "<td>$st_pro</td>";
     $table .=  "</tr>";
