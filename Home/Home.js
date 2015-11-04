@@ -3,7 +3,6 @@
  */
 $(document).ready(function() {
     $('#ToMainPage').click(function() {
-        var path ="/DepartmentLocator/MainPage/Main.html";
-        window.location = path;
+        window.location = "/DepartmentLocator/MainPage/Main.html";
     });
 });
