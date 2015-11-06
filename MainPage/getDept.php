@@ -5,14 +5,6 @@
  * Date: 10/13/2015
  * Time: 7:16 PM
  */
-//retrieve dept id from form
-if(isset($_POST['department_id'])) {
-    $department_id = intval($_POST['department_id']);
-}
-else{
-    $department_id = 60;
-}
-
 
 //establish a connection
 $conn = oci_connect('HR', 'hr', 'ORCL');
@@ -21,7 +13,15 @@ if (!$conn) {
     trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
 }
 
-//create query
+//retrieve dept id from form
+if(isset($_POST['departments'])) {
+    $department_id = intval($_POST['departments']);
+}
+else{
+    $department_id = 0;
+}
+
+//create query to get address for a department id
 $query = "select street_address, postal_code, city, state_province
 from locations
 where location_id = (select location_id from departments where department_id = $department_id)";
