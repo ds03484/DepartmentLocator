@@ -22,7 +22,7 @@ oci_execute($stid1);
 //store results in array
 $departments = array();
 while(($row = oci_fetch_array($stid1))){
-    $dept_id = $row['department_id'];
+    $dept_id = $row['DEPARTMENT_ID'];
     array_push($departments,$dept_id);
 }
 

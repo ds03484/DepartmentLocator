@@ -6,7 +6,7 @@ $(document).ready(function(){
     //populate dropdown menu
     $('#departments').append($("<option>"));
     $.getJSON('DeptID.json').then( function(data){
-        $.each(data, function(dept){
+        $.each(data, function(index, dept){
             $("#departments").append(
                 $("<option>").attr("value", dept).text(dept)
             );
